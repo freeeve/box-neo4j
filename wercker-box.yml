@@ -27,5 +27,4 @@ script: |
   tar xvfz $FILE &> /dev/null
   rm $FILE
   cd $DIR/bin
-  ulimit -n 40000
   ./neo4j start
