@@ -19,5 +19,12 @@ script: |
   sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) universe"
   sudo apt-get update
   sudo apt-get install openjdk-7-jdk
-  env
-  ./install_neo4j.sh
+  export NEO4J_VERSION=2.0.0-M06
+  echo "neo4j version: $NEO4J_VERSION"
+  export DIR="neo4j-community-$NEO4J_VERSION"
+  export FILE="$DIR-unix.tar.gz"
+  wget http://dist.neo4j.org/$FILE
+  tar xvfz $FILE &> /dev/null
+  rm $FILE
+  cd $DIR/bin
+  ./neo4j start
