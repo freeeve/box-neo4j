@@ -17,6 +17,8 @@ env:
   WERCKER_NEO4J_URL: $$HOST$$:7474
   WERCKER_NEO4J_VERSION: "2.0.0-M05"
 script: |
+  sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) universe"
+  sudu apt-get update
   sudo apt-get install openjdk-7-jdk
   DIR="neo4j-community-$WERCKER_NEO4J_VERSION"
   FILE="$DIR-unix.tar.gz"
