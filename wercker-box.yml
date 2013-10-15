@@ -19,6 +19,5 @@ script: |
   sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) universe"
   sudo apt-get update
   sudo apt-get install openjdk-7-jdk
-  sudo update-alternatives --set javac /usr/lib/jvm/java-7-openjdk/bin/javac
   sudo update-alternatives --set java /usr/lib/jvm/java-7-openjdk/bin/java
   ./install_neo4j.sh
