@@ -16,14 +16,14 @@ env:
   WERCKER_NEO4J_HOST: $$HOST$$
   WERCKER_NEO4J_URL: $$HOST$$:7474
   WERCKER_NEO4J_VERSION: "2.0.0-M05"
+  WERCKER_NEO4J_DIR: "neo4j-community-$WERCKER_NEO4J_VERSION"
+  WERCKER_NEO4J_FILE: "$WERCKER_NEO4J_DIR-unix.tar.gz"
 script: |
   sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) universe"
   sudo apt-get update
   sudo apt-get install openjdk-7-jdk
-  DIR="neo4j-community-$WERCKER_NEO4J_VERSION"
-  FILE="$DIR-unix.tar.gz"
-  wget http://dist.neo4j.org/$FILE
-  tar xvfz $FILE &> /dev/null
-  rm $FILE
-  cd $FILE/bin
+  wget http://dist.neo4j.org/$WERCKER_NEO4J_FILE
+  tar xvfz $WERCKER_NEO4J_FILE &> /dev/null
+  rm $WERCKER_NEO4J_FILE
+  cd $WERCKER_NEO4J_DIR/bin
   ./neo4j start
