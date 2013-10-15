@@ -18,7 +18,7 @@ env:
 script: |
   sudo apt-get update
   sudo apt-get install openjdk-7-jdk
-  sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/latest/bin/java -1
+  sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/java-7-openjdk-amd64/bin/java -1
   sudo update-alternatives --config java
   export NEO4J_VERSION=2.0.0-M06
   echo "neo4j version: $NEO4J_VERSION"
