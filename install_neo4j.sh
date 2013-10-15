@@ -5,3 +5,4 @@ wget http://dist.neo4j.org/$FILE
 tar xvfz $FILE &> /dev/null
 rm $FILE
 cd $DIR/bin
+./neo4j start

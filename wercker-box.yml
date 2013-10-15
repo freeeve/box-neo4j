@@ -22,4 +22,3 @@ script: |
   sudo apt-get install openjdk-7-jdk
   echo $WERCKER_NEO4J_VERSION
   ./install_neo4j.sh
-  ./neo4j start
