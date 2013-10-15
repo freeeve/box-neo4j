@@ -1,0 +1,27 @@
+name: neo4j
+version: 0.0.1
+inherits: wercker/ubuntu12.04-webessentials@0.0.3
+type: service
+platform: ubuntu@12.04
+description: wercker box for neo4j, the graph database
+keywords:
+  - neo4j
+  - opensource
+  - noqsql
+  - database
+  - json
+  - java
+env:
+  WERCKER_NEO4J_PORT: 7474
+  WERCKER_NEO4J_HOST: $$HOST$$
+  WERCKER_NEO4J_URL: $$HOST$$:7474
+  WERCKER_NEO4J_VERSION: "2.0.0-M05"
+script: |
+  sudo apt-get install openjdk-7-jdk
+  DIR="neo4j-community-$WERCKER_NEO4J_VERSION"
+  FILE="$DIR-unix.tar.gz"
+  wget http://dist.neo4j.org/$FILE
+  tar xvfz $FILE &> /dev/null
+  rm $FILE
+  cd $FILE/bin
+  ./neo4j start
