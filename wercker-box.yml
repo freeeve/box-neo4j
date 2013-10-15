@@ -19,6 +19,8 @@ script: |
   sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) universe"
   sudo apt-get update
   sudo apt-get install openjdk-7-jdk
+  sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jre1.7.0_15/bin/java -1
+  sudo update-alternatives --config java
   export NEO4J_VERSION=2.0.0-M06
   echo "neo4j version: $NEO4J_VERSION"
   export DIR="neo4j-community-$NEO4J_VERSION"
