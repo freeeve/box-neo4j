@@ -1,6 +1,6 @@
 name: neo4j
-version: 0.0.8
-inherits: wercker/ubuntu12.04-webessentials@0.0.3
+version: 0.0.9
+inherits: mies/java7-oracle@0.0.1
 type: service
 platform: ubuntu@12.04
 description: wercker box for neo4j, the graph database
@@ -16,11 +16,6 @@ env:
   WERCKER_NEO4J_HOST: $$HOST$$
   WERCKER_NEO4J_URL: $$HOST$$:7474
 script: |
-  sudo apt-get update
-  sudo apt-get install openjdk-7-jdk
-  sudo apt-get install lsof
-  sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/java-7-openjdk-amd64/bin/java 1
-  export PATH=/usr/lib/jvm/java-7-openjdk-amd64/bin:$PATH:/usr/sbin
   export NEO4J_VERSION=2.0.0-M06
   echo "neo4j version: $NEO4J_VERSION"
   export DIR="neo4j-community-$NEO4J_VERSION"
