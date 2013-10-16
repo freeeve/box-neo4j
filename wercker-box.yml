@@ -1,5 +1,5 @@
 name: neo4j
-version: 0.0.1
+version: 0.0.2
 inherits: wercker/ubuntu12.04-webessentials@0.0.3
 type: service
 platform: ubuntu@12.04
@@ -28,5 +28,6 @@ script: |
   wget http://dist.neo4j.org/$FILE
   tar xvfz $FILE &> /dev/null
   rm $FILE
+  echo "org.neo4j.server.webserver.address=0.0.0.0" >> $DIR/conf/neo4j-server.properties
   cd $DIR/bin
   ./neo4j start
