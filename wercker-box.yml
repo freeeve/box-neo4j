@@ -18,6 +18,7 @@ env:
 script: |
   sudo apt-get update
   sudo apt-get install openjdk-7-jdk
+  sudo apt-get install lsof
   sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/java-7-openjdk-amd64/bin/java 1
   export PATH=/usr/lib/jvm/java-7-openjdk-amd64/bin:$PATH:/usr/sbin
   export NEO4J_VERSION=2.0.0-M06
