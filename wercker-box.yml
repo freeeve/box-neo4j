@@ -1,5 +1,5 @@
 name: neo4j
-version: 0.0.3
+version: 0.0.4
 inherits: wercker/ubuntu12.04-webessentials@0.0.3
 type: service
 platform: ubuntu@12.04
@@ -29,5 +29,5 @@ script: |
   tar xvfz $FILE &> /dev/null
   rm $FILE
   echo "org.neo4j.server.webserver.address=0.0.0.0" >> $DIR/conf/neo4j-server.properties
-  sudo $DIR/bin/neo4j install
+  sudo $DIR/bin/neo4j install -h
   sudo sysv-rc-conf on neo4j-server
