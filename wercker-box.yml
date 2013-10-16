@@ -16,7 +16,7 @@ env:
   WERCKER_NEO4J_HOST: $$HOST$$
   WERCKER_NEO4J_URL: $$HOST$$:7474
 script: |
-  sudo apt-get lsof
+  sudo apt-get install lsof
   export NEO4J_VERSION=2.0.0-M06
   echo "neo4j version: $NEO4J_VERSION"
   export DIR="neo4j-community-$NEO4J_VERSION"
