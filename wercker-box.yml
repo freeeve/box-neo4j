@@ -30,3 +30,4 @@ script: |
   rm $FILE
   echo "org.neo4j.server.webserver.address=0.0.0.0" >> $DIR/conf/neo4j-server.properties
   sudo $DIR/bin/neo4j -h install
+  sudo service neo4j-server start
